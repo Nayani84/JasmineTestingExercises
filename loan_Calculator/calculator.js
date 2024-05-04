@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             update();
         });
-        
+
         const arp = document.getElementById("loan-rate");
         arp.addEventListener("blur", () => {
             if (arp.value.indexOf("%") < 0) {
@@ -22,9 +22,6 @@ window.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
-   
-
 });
 
 function getCurrentUIValues() {
