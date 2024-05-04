@@ -7,21 +7,23 @@ window.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             update();
         });
+        
+        const arp = document.getElementById("loan-rate");
+        arp.addEventListener("blur", () => {
+            if (arp.value.indexOf("%") < 0) {
+                arp.value = (arp.value === "" ? "0.00" : arp.value) + "%";
+            }
+        });
+    
+        const prin = document.getElementById("loan-amount");
+        prin.addEventListener("blur", () => {
+            if (prin.value.indexOf("$") < 0) {
+                prin.value = "$" + (prin.value === "" ? "0.00" : prin.value);
+            }
+        });
     }
 
-    const arp = document.getElementById("loan-rate");
-    arp.addEventListener("blur", () => {
-        if (arp.value.indexOf("%") < 0) {
-            arp.value = (arp.value === "" ? "0.00" : arp.value) + "%";
-        }
-    });
-
-    const prin = document.getElementById("loan-amount");
-    prin.addEventListener("blur", () => {
-        if (prin.value.indexOf("$") < 0) {
-            prin.value = "$" + (prin.value === "" ? "0.00" : prin.value);
-        }
-    });
+   
 
 });
 
